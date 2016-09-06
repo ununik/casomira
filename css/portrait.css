@@ -2,4 +2,19 @@
 	body{
 		background-color: red;
 	}	
+  
+  .menu{
+    text-align: center;
+    width: 100%;
+  }
+  .menuButton{
+      display: inline-block;
+      width: 35vW;
+      height: 35vW;
+      margin: 5vW;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+  }
 }

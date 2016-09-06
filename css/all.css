@@ -5,4 +5,10 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  
+  margin: 0px auto;
+}
+
+.startovniListina{
+  background-image: url(../images/menu/startovka.svg);
 }
