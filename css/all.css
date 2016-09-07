@@ -10,5 +10,33 @@ body{
 }
 
 .startovniListina{
-  background-image: url(../images/menu/startovka.svg);
+  	background-image: url(../images/menu/startovka.svg);
+}
+
+.mereni{
+	background-image: url(../images/menu/mereni.svg);
+}
+.vysledky{
+	background-image: url(../images/menu/vysledky.svg);
+}
+.strelba{
+	background-image: url(../images/menu/strelba.svg);
+}
+.menuIcon{
+	background-image: url(../images/menu.svg);
+}
+.add{
+	background-image: url(../images/add.svg);
+}
+.backButton{
+	background-image: url(../images/back.svg);
+}
+.reloadButton{
+	background-image: url(../images/reload.svg);
+}
+#logo{
+	background-image: url(../images/logo.svg);
+}
+#startPoS{
+	width:4em;
 }

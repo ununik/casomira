@@ -1,6 +1,6 @@
 @media all and (orientation: portrait) {
 	body{
-		background-color: red;
+		background-color: white;
 	}	
   
   .menu{
@@ -16,5 +16,55 @@
       background-size: 100%;
       background-position: center;
       box-sizing: border-box;
+  }
+  .menuIcon{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+  }
+  #logo{
+  	  width: 50vW;
+      height: 50vW;
+      margin: 10px auto;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+  }
+  .add{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 3px;
+  }
+  .reloadButton{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 3px;
+  }
+  .backButton{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 3px;
   }
 }

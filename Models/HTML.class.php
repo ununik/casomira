@@ -14,6 +14,7 @@ class HTML
 				<script src=\"js/jquery-3.1.0.min.js\"></script>
 				<script src=\"js/ajax.js\"></script>
 				<script src=\"js/menu.js\"></script>
+				<script src=\"js/startList.js\"></script>
 				<title>Měření mezičasů</title>
 				</head>";
 	}
