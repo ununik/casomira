@@ -67,4 +67,23 @@
       display: inline-block;
       margin: 3px;
   }
+  .remove{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 3px;
+  }
+  .removeRow{
+      height: 1em;
+  	  width: 1em;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+  }
 }

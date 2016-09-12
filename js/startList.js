@@ -3,7 +3,7 @@ function createStartList()
 	var error = false;
 	
 	var startPo = $('#startPoS').val();
-	if (startPo == '' || !$.isNumeric(startPo)) {
+	if (startPo == '' || !$.isNumeric(startPo) || startPo<0) {
 		error = true;
 		$('#startPoS').css('background-color', 'red');
 	} else {
@@ -11,7 +11,7 @@ function createStartList()
 	}
 	
 	var prvniCislo = $('#prvniCislo').val();
-	if (prvniCislo == '' || !$.isNumeric(prvniCislo)) {
+	if (prvniCislo == '' || !$.isNumeric(prvniCislo) || prvniCislo<1) {
 		error = true;
 		$('#prvniCislo').css('background-color', 'red');
 	} else {
@@ -19,7 +19,7 @@ function createStartList()
 	}
 	
 	var posledniCislo = $('#posledniCislo').val();
-	if (posledniCislo == '' || !$.isNumeric(posledniCislo)) {
+	if (posledniCislo == '' || !$.isNumeric(posledniCislo) || posledniCislo<1) {
 		error = true;
 		$('#posledniCislo').css('background-color', 'red');
 	} else {
@@ -28,6 +28,7 @@ function createStartList()
 	
 	var datum = isDate($('#datum').val());
 	if (datum == false) {
+    error = true;
 		$('#datum').css('background-color', 'red');
 	} else {
 		$('#datum').css('background-color', 'white');
@@ -36,12 +37,40 @@ function createStartList()
 	
 	var cas = isTime($('#cas').val());
 	if (cas == false) {
+    error = true;
 		$('#cas').css('background-color', 'red');
 	} else {
 		$('#cas').css('background-color', 'white');
 		$('#cas').val(cas);
 	}
-	
+  
+  if (error == false) {
+      if (prvniCislo > posledniCislo) {
+          pamet = prvniCislo;
+          prvniCislo =  posledniCislo;
+          posledniCislo = pamet;
+      }
+      saveStartList(datum, cas, prvniCislo, posledniCislo, startPo);
+  }
+}
+
+function saveStartList(datum, cas, prvniCislo, posledniCislo, startPo)
+{
+  var mypostrequest=new ajaxRequest()
+	mypostrequest.onreadystatechange=function(){
+	 if (mypostrequest.readyState==4){
+	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+		  $('#status').html(mypostrequest.responseText);
+	  }
+	  else{
+	   //alert("An error has occured making the request")
+	  }
+	 }
+	}
+	parameters = 'datum='+datum+'&cas='+cas+'&prvniCislo='+prvniCislo+'&posledniCislo='+posledniCislo+'&startPo='+startPo;
+	mypostrequest.open("POST", "ajax/startlist/new.php", true)
+	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+	mypostrequest.send(parameters)
 }
 
 function isDate(ExpiryDate) { 
@@ -127,4 +156,48 @@ function isTime(ExpiryDate) {
         return false; 
     } 
     return ExpiryDate; 
+}
+
+function removeStartlist()
+{
+    var r = confirm("Chceš opravdu smazat celou startovku?");
+    if (r == true) {
+        var mypostrequest=new ajaxRequest()
+      	mypostrequest.onreadystatechange=function(){
+      	 if (mypostrequest.readyState==4){
+      	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+      		  page('startovni_listina');
+      	  }
+      	  else{
+      	   //alert("An error has occured making the request")
+      	  }
+      	 }
+      	}
+      	parameters = '';
+      	mypostrequest.open("POST", "ajax/startlist/removeAll.php", true)
+      	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+      	mypostrequest.send(parameters)
+    }
+}
+
+function removeRow(id, stCislo)
+{
+  var r = confirm("Chceš opravdu smazat startovní číslo " + stCislo + "?");
+    if (r == true) {
+        var mypostrequest=new ajaxRequest()
+      	mypostrequest.onreadystatechange=function(){
+      	 if (mypostrequest.readyState==4){
+      	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+      		  page('startovni_listina');
+      	  }
+      	  else{
+      	   //alert("An error has occured making the request")
+      	  }
+      	 }
+      	}
+      	parameters = 'id='+id;
+      	mypostrequest.open("POST", "ajax/startlist/removeNumber.php", true)
+      	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+      	mypostrequest.send(parameters)
+  }
 }

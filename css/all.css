@@ -34,6 +34,9 @@ body{
 .reloadButton{
 	background-image: url(../images/reload.svg);
 }
+.remove{
+	background-image: url(../images/bin.svg);
+}
 #logo{
 	background-image: url(../images/logo.svg);
 }
