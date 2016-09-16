@@ -28,6 +28,12 @@ function page(page)
 	 if (mypostrequest.readyState==4){
 	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
 		  $('body').html(mypostrequest.responseText);
+		  
+		  if (page = 'mereni_mezicasu') {
+			  $( document ).ready(function() {
+				  startovkaList();
+			  });
+		  }
 	  }
 	  else{
 	   //alert("An error has occured making the request")
@@ -57,4 +63,22 @@ function subpage(page)
 	mypostrequest.open("POST", "ajax/"+page+".php", true)
 	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 	mypostrequest.send(parameters)
+}
+function startovkaList()
+{
+    var mypostrequest=new ajaxRequest()
+  	mypostrequest.onreadystatechange=function(){
+  	 if (mypostrequest.readyState==4){
+  	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+  		$('#startovkaList').html(mypostrequest.responseText);
+  	  }
+  	  else{
+  	   //alert("An error has occured making the request")
+  	  }
+  	 }
+  	}
+  	parameters = '';
+  	mypostrequest.open("POST", "ajax/mezicas/startovkaList.php", true)
+  	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+  	mypostrequest.send(parameters)
 }

@@ -4,7 +4,7 @@ $datum = strtotime($_POST['datum'].' '.$_POST['cas']);
 
 for($i = $_POST['prvniCislo']; $i <= $_POST['posledniCislo']; $i++){
       $result = Connection::connect()->prepare(
-          'SELECT id FROM `startovniListina` WHERE startovniCislo = :startovniCislo;'
+          'SELECT id FROM `startovni_listina` WHERE startovniCislo = :startovniCislo;'
       );
     
       $result->execute(array(
@@ -15,14 +15,16 @@ for($i = $_POST['prvniCislo']; $i <= $_POST['posledniCislo']; $i++){
           print "Číslo $i bylo ve startovce už dříve.<br>";
           continue;
       }
+      $kategorie = $_POST['kategorie'];
       
       $result = Connection::connect()->prepare(
-          'INSERT INTO `startovniListina`(`startovniCislo`, `casStartu`) VALUES (:startovniCislo, :casStartu);'
+          'INSERT INTO `startovni_listina` (`startovniCislo`, `casStartu`, `kategorie`) VALUES (:startovniCislo, :casStartu, :kategorie);'
       );
     
       $result->execute(array(
           ':startovniCislo' => $i,
-          ':casStartu' => $datum
+          ':casStartu' => $datum,
+      	  ':kategorie' => $kategorie
       ));
 
     $datum = $datum + $_POST['startPo'];

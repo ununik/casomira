@@ -7,6 +7,10 @@
     text-align: center;
     width: 100%;
   }
+  h1{
+  	font-size: 5vH;
+  	margin: 2vH;
+  }
   .menuButton{
       display: inline-block;
       width: 35vW;
@@ -45,7 +49,17 @@
       background-position: center;
       box-sizing: border-box;
       display: inline-block;
-      margin: 3px;
+      margin: 3px 10px;
+  }
+  .kategorieButton{
+  	  height: 10vW;
+  	  width: 10vW;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 3px 10px;
   }
   .reloadButton{
   	  height: 10vW;
@@ -55,7 +69,7 @@
       background-position: center;
       box-sizing: border-box;
       display: inline-block;
-      margin: 3px;
+      margin: 3px 10px;
   }
   .backButton{
   	  height: 10vW;
@@ -65,7 +79,7 @@
       background-position: center;
       box-sizing: border-box;
       display: inline-block;
-      margin: 3px;
+      margin: 3px 10px;
   }
   .remove{
   	  height: 10vW;
@@ -75,7 +89,7 @@
       background-position: center;
       box-sizing: border-box;
       display: inline-block;
-      margin: 3px;
+      margin: 3px 10px;
   }
   .removeRow{
       height: 1em;
@@ -85,5 +99,90 @@
       background-position: center;
       box-sizing: border-box;
       display: inline-block;
+  }
+  .settingsRow{
+      height: 1em;
+  	  width: 1em;
+  	  background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      box-sizing: border-box;
+      display: inline-block;
+  }
+  #startovkaList{
+  	width: 100%;
+  	height: 26vH;
+  	border-bottom: 1px solid black;
+  	overflow: auto;
+  }
+  #results{
+  	width: 100%;
+  	height: 60vH;
+  	overflow: auto;
+  }
+  .cislo{
+	width: 40px;
+	height: 40px;
+	margin: 4px;
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  .cislo .number{
+  		text-align: center;
+  		position: relative;
+  		top: 21px;
+  		left: 7px;
+  		font-size: 15px;
+  		width: 27px;
+  		height: 17px;
+  }
+  .resultNumber{
+  	width: 25px;
+  	text-align: center;
+  }
+  .resultStartovniCislo{
+  	width: 25px;
+  	text-align: center;
+  	color: gray;
+  }
+  .vysledkyTabluka{
+  	width: 100%;
+  	border-collapse: collapse;
+  }
+  .vysledkyTabluka tr:nth-child(even) {
+  	background: #CCC
+  }
+  .resultTime{
+  	    width: 120px;
+  }
+  .vysledkyTitle{
+  	width: 100%;
+  	text-align: center;
+  	font-size: 20px;
+  	margin: 7px 0px;
+  }
+  .notStarted{
+  	display: inline-block;
+  }
+  .wrapper{
+  	display: inline-block;
+  }
+  .mezicas{
+  	display: inline-block;
+  }
+  .lastNumber{
+  	display: inline-block;
+  }
+  .last{
+    font-weight: bold;
+    background-color: #7ed3eb !important;
+  }
+  #clock{
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
   }
 }

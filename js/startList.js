@@ -43,18 +43,20 @@ function createStartList()
 		$('#cas').css('background-color', 'white');
 		$('#cas').val(cas);
 	}
-  
+	
+	var kategorie = $('#kategorie').val();
+
   if (error == false) {
       if (prvniCislo > posledniCislo) {
           pamet = prvniCislo;
           prvniCislo =  posledniCislo;
           posledniCislo = pamet;
       }
-      saveStartList(datum, cas, prvniCislo, posledniCislo, startPo);
+      saveStartList(datum, cas, prvniCislo, posledniCislo, startPo, kategorie);
   }
 }
 
-function saveStartList(datum, cas, prvniCislo, posledniCislo, startPo)
+function saveStartList(datum, cas, prvniCislo, posledniCislo, startPo, kategorie)
 {
   var mypostrequest=new ajaxRequest()
 	mypostrequest.onreadystatechange=function(){
@@ -67,8 +69,8 @@ function saveStartList(datum, cas, prvniCislo, posledniCislo, startPo)
 	  }
 	 }
 	}
-	parameters = 'datum='+datum+'&cas='+cas+'&prvniCislo='+prvniCislo+'&posledniCislo='+posledniCislo+'&startPo='+startPo;
-	mypostrequest.open("POST", "ajax/startlist/new.php", true)
+	parameters = 'datum='+datum+'&cas='+cas+'&prvniCislo='+prvniCislo+'&posledniCislo='+posledniCislo+'&startPo='+startPo+'&kategorie='+kategorie;
+	mypostrequest.open("POST", "ajax/startList/new.php", true)
 	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 	mypostrequest.send(parameters)
 }
@@ -174,7 +176,7 @@ function removeStartlist()
       	 }
       	}
       	parameters = '';
-      	mypostrequest.open("POST", "ajax/startlist/removeAll.php", true)
+      	mypostrequest.open("POST", "ajax/startList/removeAll.php", true)
       	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
       	mypostrequest.send(parameters)
     }
@@ -196,8 +198,75 @@ function removeRow(id, stCislo)
       	 }
       	}
       	parameters = 'id='+id;
-      	mypostrequest.open("POST", "ajax/startlist/removeNumber.php", true)
+      	mypostrequest.open("POST", "ajax/startList/removeNumber.php", true)
       	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
       	mypostrequest.send(parameters)
   }
+}
+function upravitJmeno(jmeno, id)
+{
+	var person = prompt("Jméno", jmeno);
+	if (person == null) {
+		return;
+	}
+    var mypostrequest=new ajaxRequest()
+  	mypostrequest.onreadystatechange=function(){
+  	 if (mypostrequest.readyState==4){
+  	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+  		  page('startovni_listina');
+  	  }
+  	  else{
+  	   //alert("An error has occured making the request")
+  	  }
+  	 }
+  	}
+  	parameters = 'jmeno='+person+'&id='+id;
+  	mypostrequest.open("POST", "ajax/startList/changeName.php", true)
+  	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+  	mypostrequest.send(parameters)
+}
+
+function changeCategoryShort(nazev, id)
+{
+	var nazev = prompt("Název", nazev);
+	if (nazev == null) {
+		return;
+	}
+    var mypostrequest=new ajaxRequest()
+  	mypostrequest.onreadystatechange=function(){
+  	 if (mypostrequest.readyState==4){
+  	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+  		  page('kategorie');
+  	  }
+  	  else{
+  	   //alert("An error has occured making the request")
+  	  }
+  	 }
+  	}
+  	parameters = 'nazev='+nazev+'&id='+id;
+  	mypostrequest.open("POST", "ajax/startList/changeCategoryShort.php", true)
+  	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+  	mypostrequest.send(parameters)
+}
+function changeCategoryLong(nazev, id)
+{
+	var nazev = prompt("Název", nazev);
+	if (nazev == null) {
+		return;
+	}
+    var mypostrequest=new ajaxRequest()
+  	mypostrequest.onreadystatechange=function(){
+  	 if (mypostrequest.readyState==4){
+  	  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+  		  page('kategorie');
+  	  }
+  	  else{
+  	   //alert("An error has occured making the request")
+  	  }
+  	 }
+  	}
+  	parameters = 'nazev='+nazev+'&id='+id;
+  	mypostrequest.open("POST", "ajax/startList/changeCategoryLong.php", true)
+  	mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+  	mypostrequest.send(parameters)
 }

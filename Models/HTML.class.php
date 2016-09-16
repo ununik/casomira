@@ -4,7 +4,7 @@ class HTML
 	private function _header()
 	{
 		return "<head>
-				<!--<base href=\"".BASE_URL."\">-->
+				<base href=\"".BASE_URL."\">
 				<meta charset=\"UTF-8\">
 				<meta name=\"author\" content=\"Martin Přibyl\">
 				<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -12,9 +12,11 @@ class HTML
 				<link rel=\"stylesheet\" type=\"text/css\" href=\"css/landscape.css\">
 				<link rel=\"stylesheet\" type=\"text/css\" href=\"css/all.css\">
 				<script src=\"js/jquery-3.1.0.min.js\"></script>
+				<script src=\"js/clock.js\"></script>
 				<script src=\"js/ajax.js\"></script>
 				<script src=\"js/menu.js\"></script>
 				<script src=\"js/startList.js\"></script>
+				<script src=\"js/mezicas.js\"></script>
 				<title>Měření mezičasů</title>
 				</head>";
 	}
