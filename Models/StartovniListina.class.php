@@ -34,6 +34,12 @@ class StartovniListina
       		);
       
       $result->execute();
+      
+      $result = Connection::connect()->prepare(
+    		'DELETE FROM `strelba` WHERE 1;ALTER TABLE mezicas AUTO_INCREMENT = 1;'
+    		);
+      
+      $result->execute();
     }
     
     public function removeId($id)
