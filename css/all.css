@@ -5,6 +5,7 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: sans-serif;
   
   margin: 0px auto;
 }
@@ -91,7 +92,25 @@ body{
   	top: 9px;
   	left: 6px;
 }
-
+.cislo{
+	width: 40px;
+	height: 40px;
+	margin: 4px;
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  .cislo .number{
+  		text-align: center;
+  		position: relative;
+  		top: 21px;
+  		left: 7px;
+  		font-size: 15px;
+  		width: 27px;
+  		height: 17px;
+  }
 #logo{
 	background-image: url(../images/logo.svg);
 }
@@ -101,3 +120,33 @@ body{
 .eq{
 	display: none !important;
 }
+.target{
+	background-image: url(../images/target/miss.svg);	
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.smallTarget{
+	background-image: url(../images/target/miss.svg);	
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.hitTarget{
+	background-image: url(../images/target/hit.svg) !important;
+}
+.done{
+	background-image: url(../images/done.svg);	
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+  #actualShooting{
+  	background-color: #ff5555;
+  }

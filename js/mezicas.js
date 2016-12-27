@@ -24,7 +24,7 @@ function addNewTime(id, timestamp) {
     mypostrequest.onreadystatechange=function(){
     if (mypostrequest.readyState==4){
         if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
-             $("#results").html(mypostrequest.responseText);
+            $("#results").html(mypostrequest.responseText);
             startovkaList();
          }
     }

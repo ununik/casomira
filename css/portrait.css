@@ -10,6 +10,7 @@
   h1{
   	font-size: 5vH;
   	margin: 2vH;
+	padding-top: 15px;
   }
   .menuButton{
       display: inline-block;
@@ -120,25 +121,6 @@
   	height: 60vH;
   	overflow: auto;
   }
-  .cislo{
-	width: 40px;
-	height: 40px;
-	margin: 4px;
-	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    box-sizing: border-box;
-    display: inline-block;
-  }
-  .cislo .number{
-  		text-align: center;
-  		position: relative;
-  		top: 21px;
-  		left: 7px;
-  		font-size: 15px;
-  		width: 27px;
-  		height: 17px;
-  }
   .resultNumber{
   	width: 25px;
   	text-align: center;
@@ -183,6 +165,66 @@
   #clock{
   	position: absolute;
   	top: 0px;
-  	left: 0px;
+	width: 30vW;
+	margin: 0px 30vW;
+	text-align: center;
+	background-color: gray;
+	color: white;
+	padding: 5px 0px;
+	border-radius: 0px 0px 5px 5px;
+  }
+  .target{
+  	width: 15vW;
+  	height: 15vW;
+  	margin: 0px 5px;
+  }
+    .smallTarget{
+  	width: 5vW;
+  	height: 5vW;
+  }
+  table {
+  	width: 100%;
+  	border-collapse: collapse;
+  }
+  table th {
+  	font-size: 12px;
+  }
+  .startovniListina_cislo{
+  	width: 35px;
+  	text-align: center;
+  }
+  .startovniListina_remove{
+  	width: 30px;
+  	text-align: center;
+  }
+  .startovniListina_kategorie{
+  	width: 55px;
+  	text-align: center;
+  }
+  .startovniListina_start{
+  	width: 90px;
+  	text-align: center;  
+  }
+  .startovniListina_table tr:nth-child(even) {
+  	background-color: #CCC;
+  }
+  .done{
+  	width: 20vW;
+  	height: 20vW;
+  	margin: 10px auto;
+  	display: block !important;
+  }
+  #mainTarget{
+  	text-align: center;
+  }
+  .cisloStrelby{
+  	width: 35px;
+  	height: 35px;
+  	text-align: center;
+  	line-height: 35px;
+  	background-color: #7ed3eb;
+  	border-radius: 4px;
+  	margin: 2px;
+  	display: inline-block;
   }
 }
