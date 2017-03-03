@@ -25,7 +25,11 @@ if ($athlete['jmeno'] != '') {
 print '</h4>';
 
 for ($i = 1; $i <= $strelba->getLastStrelbaForAthlete($athlete['id'])+1; $i++) {
-    print '<div onclick="atShootingRange(\''.$athlete['id'].'\', \''. $i .'\')" class="cisloStrelby">' . $i . '</div>';
+    print '<div onclick="atShootingRange(\''.$athlete['id'].'\', \''. $i .'\')" class="cisloStrelby" ';
+    if ($i == $_POST['actualShooting']) {
+        print 'id="actualShooting"';
+    }
+    print '>' . $i . '</div>';
 }
 
 print '<div id="mainTarget">';

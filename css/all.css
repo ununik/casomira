@@ -1,149 +1,182 @@
-body{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-family: sans-serif;
-  
-  margin: 0px auto;
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: sans-serif;
+	margin: 0px auto;
 }
 
-.startovniListina{
-  	background-image: url(../images/menu/startovka.svg);
+.startovniListina {
+	background-image: url(../images/menu/startovka.svg);
 }
 
-.mereni{
+.mereni {
 	background-image: url(../images/menu/mereni.svg);
 }
-.vysledky{
+
+.vysledky {
 	background-image: url(../images/menu/vysledky.svg);
 }
-.strelba{
+
+.strelba {
 	background-image: url(../images/menu/strelba.svg);
 }
-.menuIcon{
+
+.menuIcon {
 	background-image: url(../images/menu.svg);
 }
-.add{
+
+.add {
 	background-image: url(../images/add.svg);
 }
-.backButton{
+
+.backButton {
 	background-image: url(../images/back.svg);
 }
-.kategorieButton{
+
+.kategorieButton {
 	background-image: url(../images/kategorie.svg);
 }
-.reloadButton{
+
+.reloadButton {
 	background-image: url(../images/reload.svg);
 }
-.remove{
+
+.remove {
 	background-image: url(../images/bin.svg);
 }
-.settings{
+
+.settings {
 	background-image: url(../images/settings.svg);
 }
-.cislo{
+
+.cislo {
 	background-image: url(../images/cislo/blue.svg);
 }
-.notStarted .cislo{
-	background-image: url(../images/cislo/gray.svg) !important;	
+
+.notStarted .cislo {
+	background-image: url(../images/cislo/gray.svg) !important;
 }
-.mezicas1 .cislo{
+
+.mezicas1 .cislo {
 	background-image: url(../images/cislo/mezicas1.svg) !important;
 }
-.mezicas2 .cislo{
+
+.mezicas2 .cislo {
 	background-image: url(../images/cislo/mezicas2.svg) !important;
 }
-.mezicas3 .cislo{
+
+.mezicas3 .cislo {
 	background-image: url(../images/cislo/mezicas3.svg) !important;
 }
-.mezicas4 .cislo{
+
+.mezicas4 .cislo {
 	background-image: url(../images/cislo/mezicas4.svg) !important;
 }
-.mezicas5 .cislo{
+
+.mezicas5 .cislo {
 	background-image: url(../images/cislo/mezicas5.svg) !important;
 }
-.mezicas6 .cislo{
+
+.mezicas6 .cislo {
 	background-image: url(../images/cislo/mezicas6.svg) !important;
 }
-.mezicas7 .cislo{
+
+.mezicas7 .cislo {
 	background-image: url(../images/cislo/mezicas7.svg) !important;
 }
-.mezicas8 .cislo{
+
+.mezicas8 .cislo {
 	background-image: url(../images/cislo/mezicas8.svg) !important;
 }
-.lastNumber .cislo{
-	background-image: url(../images/cislo/red.svg) !important;		
+
+.lastNumber .cislo {
+	background-image: url(../images/cislo/red.svg) !important;
 }
-.mezicasMoreThan8 .cislo{
-	background-image: url(../images/cislo/more.svg) !important;	
+
+.mezicasMoreThan8 .cislo {
+	background-image: url(../images/cislo/more.svg) !important;
 }
-.cisloMezicasu{
-  	float: left;
-  	z-index: 10;
-  	font-size: 12px;
-  	width: 0px;
-  	text-align: center;
-  	overflow: visible;  
-  	position: relative;
-  	z-index: 15;
-  	top: 9px;
-  	left: 6px;
+
+.cisloMezicasu {
+	float: left;
+	z-index: 10;
+	font-size: 12px;
+	width: 0px;
+	text-align: center;
+	overflow: visible;
+	position: relative;
+	z-index: 15;
+	top: 9px;
+	left: 6px;
 }
-.cislo{
+
+.cislo {
 	width: 40px;
 	height: 40px;
 	margin: 4px;
 	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    box-sizing: border-box;
-    display: inline-block;
-  }
-  .cislo .number{
-  		text-align: center;
-  		position: relative;
-  		top: 21px;
-  		left: 7px;
-  		font-size: 15px;
-  		width: 27px;
-  		height: 17px;
-  }
-#logo{
+	background-size: 100%;
+	background-position: center;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.cislo .number {
+	text-align: center;
+	position: relative;
+	top: 21px;
+	left: 7px;
+	font-size: 15px;
+	width: 27px;
+	height: 17px;
+}
+
+#logo {
 	background-image: url(../images/logo.svg);
 }
-#startPoS{
-	width:4em;
+
+#startPoS {
+	width: 4em;
 }
-.eq{
+
+.eq {
 	display: none !important;
 }
-.target{
-	background-image: url(../images/target/miss.svg);	
+
+.target {
+	background-image: url(../images/target/miss.svg);
 	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    box-sizing: border-box;
-    display: inline-block;
+	background-size: 100%;
+	background-position: center;
+	box-sizing: border-box;
+	display: inline-block;
 }
-.smallTarget{
-	background-image: url(../images/target/miss.svg);	
+
+.smallTarget {
+	background-image: url(../images/target/miss.svg);
 	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    box-sizing: border-box;
-    display: inline-block;
+	background-size: 100%;
+	background-position: center;
+	box-sizing: border-box;
+	display: inline-block;
 }
-.hitTarget{
+
+.hitTarget {
 	background-image: url(../images/target/hit.svg) !important;
 }
-.done{
-	background-image: url(../images/done.svg);	
+
+.done {
+	background-image: url(../images/done.svg);
 	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    box-sizing: border-box;
-    display: inline-block;
+	background-size: 100%;
+	background-position: center;
+	box-sizing: border-box;
+	display: inline-block;
+}
+#actualShooting {
+	background-color: #ff5555;
 }
